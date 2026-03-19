@@ -5,7 +5,7 @@
   <div class="col-8 offset-2">
     <br>
     <h3>Create New Listing</h3>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" novalidate class="needs-validation">
       
       <div class="mb-3"> <!-- margin-bottom-3 -->
         <label for="title" class="form-label">Title</label>
@@ -14,7 +14,10 @@
           placeholder="Add a Catchy Title"
           type="text"
           class="form-control"
+          required
         />
+        <div class="valid-feedback">Good Title</div>
+        <div class="invalid-feedback">Can't Leave Empty</div>
       </div>
 
       <div class="mb-3">
@@ -24,7 +27,9 @@
           placeholder="Describe Your Location"
           type="text"
           class="form-control"
+          required
         ></textarea>
+        <div class="invalid-feedback">Can't Leave Empty</div>
       </div>
 
       <div class="mb-3">
@@ -34,6 +39,7 @@
           placeholder="Enter image URL"
           type="text"
           class="form-control"/>
+          <div class="invalid-feedback">Can't Leave Empty</div>
       </div>
 
       <div class="row">
@@ -43,7 +49,17 @@
             name="listing[price]" 
             placeholder="1200" 
             type="number" 
-            class="form-control" />
+            class="form-control" 
+            required
+            />
+          <div class="invalid-feedback">Can't Leave Empty</div>
+          <!-- <input
+            name="listing[price]" 
+            placeholder="1200" 
+            class="form-control" 
+            required
+            /> -->
+
         </div>
 
         <div class="mb-3 col-md-8">
@@ -52,7 +68,10 @@
             name="listing[country]" 
             placeholder="India" 
             type="text" 
-            class="form-control" />
+            class="form-control"
+            required 
+            />
+          <div class="invalid-feedback">Can't Leave Empty</div>
         </div>
       </div>
 
@@ -62,10 +81,13 @@
           name="listing[location]"
           placeholder="Jaipur Rajasthan"
           type="text"
-          class="form-control" />
+          class="form-control" 
+          required
+          />
+        <div class="invalid-feedback">Can't Leave Empty</div>
       </div>
 
-      <button class="btn btn-dark add-btn">Create</button>
+      <button class="btn btn-dark add-btn">Add</button>
     <br><br>
     </form>
   </div>
